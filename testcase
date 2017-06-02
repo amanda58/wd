@@ -1,0 +1,27 @@
+Workflow				
+Module	No	Test Case Name	Step Description	Expected Result
+Application informations	1	增加一个申请信息	以一个没有流程建模模块的用户登录系统（http://sdv.lcm.huawei.com/home），进入系统，点击workspace-> add, 在搜索里输入流程建模，进行增加	流程建模模块会显示在当前用户中
+Application informations			以管理员身份点击“流程建模”	系统会进入Model Informations界面
+Application informations			以普通用户身份点击“流程建模”	"系统会进入application informations界面，界面显示subject和remark输入框，及submit 和reset按钮。必须输入项目的输入框后面有红色标记[*]
+Subject：显示占位符[Input Subject...]
+Remark：显示占位符[Input Remark...]"
+Application informations			"Subject不录入任何内容
+点击“yes”"	"Subject的输入框背景色变红
+在输入框上弹出[This field is required!]的提示信息"
+Application informations	2	占位符功能确认	Subject输入框没有输入任何内容，且获得焦点	Subject的输入框显示空白
+Application informations			Subject输入框没有输入任何内容，且失去焦点	Subject的输入框显示占位符[Input Subject...]
+Application informations			Subject输入框有内容，且失去焦点	Subject的输入框显示输入内容
+Application informations			Subject输入框有内容，且获得焦点	Subject的输入框显示输入内容
+Application informations			Remark输入框没有输入任何内容，且获得焦点	Remark的输入框显示空白
+Application informations			Remark输入框没有输入任何内容，且失去焦点	Remark的输入框显示占位符[Input Remark...]
+Application informations			Remark输入框有内容，且失去焦点	Remark的输入框显示输入内容
+Application informations			Remark输入框有内容，且获得焦点	Remark的输入框显示输入内容
+Application informations	3	校验申请信息输入内容	"Subject录入内容长度 > 1000字节
+点击“yes”"	"Subject的输入框背景色变红
+在输入框上弹出[his field is too long (maximum is 1000 bytes)]的提示信息"
+Application informations			"Remark不录入任何内容
+点击“yes”"	"Remark的输入框背景色变红
+在输入框上弹出[This field is required!]的提示信息"
+Application informations			"Remark录入内容长度 > 1000字节
+点击“yes”"	"Remark的输入框背景色变红
+在输入框上弹出[his field is too long (maximum is 1000 bytes)]的提示信息"
